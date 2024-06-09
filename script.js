@@ -35,3 +35,13 @@ document.querySelector('.check').addEventListener('click', () => {
   }
 });
 
+document.querySelector(".again").addEventListener("click",()=>{
+  document.querySelector('.score').textContent=20
+  document.querySelector('.number').textContent='?'
+  document.querySelector('.message').textContent = 'Start Guessing... ';
+  document.querySelector("body").style.backgroundColor ="#222"
+   document.querySelector(".number").style.width ="15rem"
+
+ 
+
+})
