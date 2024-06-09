@@ -1,14 +1,20 @@
 'use strict';
 let score = 20;
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
-document.querySelector('.number').textContent = secretNumber;
+// document.querySelector('.number').textContent = secretNumber;
 
 document.querySelector('.check').addEventListener('click', () => {
   let guess = Number(document.querySelector('.guess').value);
   if (!guess) {
     document.querySelector('.message').textContent = 'No Number';
+    //logic for win
   } else if (guess === secretNumber) {
+    
     document.querySelector('.message').textContent = '🏆 correct Number';
+    document.querySelector('.number').textContent = secretNumber;
+    //changing color when won
+    document.querySelector("body").style.backgroundColor ="#60b347"
+    document.querySelector(".number").style.width ="30rem"
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📉 Too High';
@@ -28,3 +34,4 @@ document.querySelector('.check').addEventListener('click', () => {
    
   }
 });
+
